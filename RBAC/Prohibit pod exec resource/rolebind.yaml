@@ -1,0 +1,12 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: user1-get-pods
+subjects:
+- apiGroup: ""
+  kind: User
+  name: user1
+roleRef:
+ apiGroup: ""
+ kind: Role
+ name: block-exec
