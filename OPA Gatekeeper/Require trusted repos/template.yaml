@@ -24,7 +24,7 @@ spec:
         package k8sallowedrepos
 
         violation[{"msg": msg}] {
-          input.review.spec.kind == "Pod"
+          input.review.object.spec.kind == "Pod"
           image:= input.review.object.spec.containers[_].image
           satisfied := [good | repo = input.parameters.repos[_] ; good = startswith(image, repo)]
           not any(satisfied)
