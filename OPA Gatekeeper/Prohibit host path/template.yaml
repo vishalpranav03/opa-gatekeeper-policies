@@ -27,9 +27,9 @@ spec:
          allowedpaths := input.parameters.paths
          hostpath := input.review.object.spec.volumes[_].hostPath.path
          not contains(allowedpaths,hostpath)
-         msg := sprintf("%v not in allowed paths,[hostpath])
+         msg := sprintf("%v not in allowed paths",[hostpath])
         }
 
-        contains(allowedpaths,hostpaths) {
+        contains(allowedpaths,hostpath) {
          hostpath == allowedpaths[_]
         }
